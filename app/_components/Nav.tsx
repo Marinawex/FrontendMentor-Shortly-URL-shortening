@@ -13,7 +13,7 @@ function Nav() {
   return (
     <nav>
       <div className="flex justify-between m-5">
-        <Image src={logo} width={90} height={30} alt="/" />
+        <Image src={logo} width={121} height={33} alt="/" />
         <Image src={menu} width={67} height={30} alt="/" onClick={handleMenu} />
       </div>
 

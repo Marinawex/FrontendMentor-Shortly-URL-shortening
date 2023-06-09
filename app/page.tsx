@@ -4,12 +4,22 @@ import records from "../public/images/icon-detailed-records.svg";
 import customizable from "../public/images/icon-fully-customizable.svg";
 import Shorten from "./_components/Shorten";
 import Hero from "./_components/Hero";
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from "@tanstack/react-query";
+
+const queryClient = new QueryClient()
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Shorten />
+    
+    <Shorten/>
+     
+      
       <div id="statistics" className="bg-gray-100 py-8 pt-16">
         <h2>Advanced Statistics</h2>{" "}
         <p className="pb-16">
@@ -59,7 +69,6 @@ export default function Home() {
           </p>
         </div>
       </div>
-
       <div id="boost" className="bg-DarkViolet py-[6rem]  bg-boost-pattern">
         <h2 className="text-white">Boost your links today</h2>
         <button className="bg-Cyan rounded-full p-2 px-7 text-white hover:opacity-75">
