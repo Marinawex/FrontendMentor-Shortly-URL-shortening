@@ -15,7 +15,7 @@ const fetchUrl = async (url: string) => {
 
 function Shorten() {
   const [links, setLinks] = useState<Array<Url>>([]);
-  const [url, setUrl] = useState({ long: "", short: "", copied: false });
+  const [url, setUrl] = useState<Url>({ long: "", short: "", copied: false });
   const [empty, setEmpty] = useState(false);
 
   const { isLoading, error, data, refetch } = useQuery({
@@ -24,21 +24,30 @@ function Shorten() {
       const data = await fetchUrl(url.long);
       const newUrl = { ...url, short: data.result.full_short_link };
       setUrl(newUrl);
-      setLinks([...links, newUrl]);
+      setLinks([newUrl, ...links]);
       let oldData = sessionStorage.getItem("links") || "";
 
       if (oldData) {
         let oldUrls = JSON.parse(oldData);
-        
-        sessionStorage.setItem("links", JSON.stringify([...oldUrls, newUrl]));
+
+        sessionStorage.setItem("links", JSON.stringify([newUrl, ...oldUrls]));
       } else {
         sessionStorage.setItem("links", JSON.stringify([newUrl]));
       }
+      setUrl({ long: "", short: "", copied: false });
 
       return data;
     },
     enabled: false,
   });
+
+  useEffect(() => {
+    let value;
+    value = sessionStorage.getItem("links") || "";
+    if (value) {
+      setLinks(JSON.parse(value));
+    }
+  }, []);
 
   const handleUrl = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUrl({ ...url, long: e.target.value });
@@ -54,27 +63,16 @@ function Shorten() {
     }
   };
 
-  const handleCopy = (text: string, idx: number) => {
-    const copiedUrl = links.filter((lnk) => {
-      if (lnk.short == text) {
-        return lnk;
+  const handleCopy = (linkToCopy: string) => {
+    const modifiedLinks: Url[] = links.map((link) => {
+      if (link.short == linkToCopy) {
+        link.copied = true;
       }
+      return link;
     });
-
-    navigator.clipboard.writeText(text);
+    setLinks(modifiedLinks);
+    navigator.clipboard.writeText(linkToCopy);
   };
-
-  useEffect(() => {
-    let value;
-    // Get the value from local storage if it exists
-    value = sessionStorage.getItem("links") || "";
-    if (value) {
-      setLinks(JSON.parse(value));
-    }
-  }, []);
-
-  console.log(links);
-  console.log(url);
 
   return (
     <>
@@ -100,24 +98,24 @@ function Shorten() {
       </form>
 
       {links &&
-        links.reverse().map((lnk, idx) => {
+        links.map((link, idx) => {
           return (
             <div
               key={idx}
               id="links"
               className="flex flex-col p-4 gap-3 rounded-md m-4  bg-grey "
             >
-              <p className="text-black text-start p-2">{lnk.long}</p>
+              <p className="text-black text-start p-2">{link.long}</p>
               <hr />
 
-              <p className="text-Cyan text-start p-2">{lnk.short}</p>
+              <p className="text-Cyan text-start p-2">{link.short}</p>
               <button
                 className={`rounded-md p-2 px-7 text-white  ${
-                  lnk.copied ? "bg-DarkViolet" : "bg-Cyan hover:opacity-75"
+                  link.copied ? "bg-DarkViolet" : "bg-Cyan hover:opacity-75"
                 } `}
-                onClick={() => handleCopy(lnk.short, idx)}
+                onClick={() => handleCopy(link.short)}
               >
-                {lnk.copied ? "copied!" : "Copy"}
+                {link.copied ? "Copied!" : "Copy"}
               </button>
               <p></p>
             </div>
