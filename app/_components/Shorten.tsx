@@ -25,13 +25,14 @@ function Shorten() {
       const newUrl = { ...url, short: data.result.full_short_link };
       setUrl(newUrl);
       setLinks([...links, newUrl]);
-      let oldData = localStorage.getItem("links") || "";
+      let oldData = sessionStorage.getItem("links") || "";
 
       if (oldData) {
         let oldUrls = JSON.parse(oldData);
-        localStorage.setItem("links", JSON.stringify([...oldUrls, newUrl]));
+        
+        sessionStorage.setItem("links", JSON.stringify([...oldUrls, newUrl]));
       } else {
-        localStorage.setItem("links", JSON.stringify([newUrl]));
+        sessionStorage.setItem("links", JSON.stringify([newUrl]));
       }
 
       return data;
@@ -66,7 +67,7 @@ function Shorten() {
   useEffect(() => {
     let value;
     // Get the value from local storage if it exists
-    value = localStorage.getItem("links") || "";
+    value = sessionStorage.getItem("links") || "";
     if (value) {
       setLinks(JSON.parse(value));
     }
@@ -99,7 +100,7 @@ function Shorten() {
       </form>
 
       {links &&
-        links.map((lnk, idx) => {
+        links.reverse().map((lnk, idx) => {
           return (
             <div
               key={idx}
