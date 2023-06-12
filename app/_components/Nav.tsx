@@ -17,9 +17,9 @@ function Nav() {
           <Image src={logo} width={121} height={33} alt="/" />
           <div className="desktop-menu hidden lg:flex  ">
             <ul className=" lg:flex  lg:space-x-8 hidden text-GrayishViolet">
-              <li className="hover:text-black">Features</li>
-              <li className="hover:text-black">Pricing</li>
-              <li className="hover:text-black">Resources</li>
+              <li className="hover:text-black cursor-pointer">Features</li>
+              <li className="hover:text-black cursor-pointer">Pricing</li>
+              <li className="hover:text-black cursor-pointer">Resources</li>
             </ul>
           </div>
         </div>

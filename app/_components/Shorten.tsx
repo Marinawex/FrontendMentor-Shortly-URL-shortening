@@ -76,46 +76,50 @@ function Shorten() {
 
   return (
     <>
+      <div id="Shorten" className="bg-gray-100  flex flex-col ">
+        <form onSubmit={handleShortenUrl}>
+          <div id="shorten" className="lg:mx-52 ">
+            {" "}
+            <div className="flex flex-col p-4 gap-3 bg-DarkViolet rounded-md m-4 bg-shorten-pattern bg-cover lg:flex-row lg:space-x-5 lg:p-10 lg:bg-shorten-desktop-pattern">
+               
+              <input
+                placeholder="Shorten a link here..."
+                className={`rounded-md p-2 ${
+                  empty ? "border-Red border-2" : ""
+                } lg:grow`}
+                value={url.long}
+                onChange={(e) => handleUrl(e)}
+              ></input>
+              <button
+                className="bg-Cyan rounded-md p-2 px-7 text-white hover:opacity-75"
+                type="submit"
+              >
+                Shorten It!
+              </button>
+            
 
-    <div  id="Shorten"className="bg-gray-100  flex flex-col">
-      <form onSubmit={handleShortenUrl}>
-        <div id="shorten" className="lg:px-52 ">
-          {" "}
-          <div className="flex flex-col p-4 gap-3 bg-DarkViolet rounded-md m-4 bg-shorten-pattern bg-cover lg:flex-row lg:space-x-5 lg:p-10 lg:bg-shorten-desktop-pattern">
-            <input
-              placeholder="Shorten a link here..."
-              className={`rounded-md p-2 ${
-                empty ? "border-Red border-2" : ""
-              } lg:grow`}
-              value={url.long}
-              onChange={(e) => handleUrl(e)}
-            ></input>
-            <button
-              className="bg-Cyan rounded-md p-2 px-7 text-white hover:opacity-75"
-              type="submit"
-            >
-              Shorten It!
-            </button>
-            {empty && <p className="text-Red text-start">Please add a link</p>}
+
+              {empty && (
+                <p className="text-Red text-start ">Please add a link</p>
+              )}
+            </div>
           </div>
-        </div>
-        
-      </form>
-      </div>
+        </form>
+     
       {links &&
         links.map((link, idx) => {
           return (
             <div
               key={idx}
               id="links"
-              className="flex flex-col p-4 gap-3 rounded-md m-4  bg-grey lg:flex-row lg:justify-end lg:px-52"
+              className="flex flex-col p-5 bg-white gap-3 rounded-md m-4  lg:flex-row lg:justify-between lg:mx-52 lg:my-2 "
             >
               <p className="text-black text-start p-2 truncate lg:justify-self-start">
                 {link.long}
               </p>
-              <hr />
+              <hr className="visible lg:invisible"/>
 
-              <p className="text-Cyan text-start p-2">{link.short}</p>
+              <p className="text-Cyan text-start  p-2">{link.short}</p>
               <button
                 className={`lg:justify-self-end rounded-md p-2 px-7 text-white  ${
                   link.copied ? "bg-DarkViolet" : "bg-Cyan hover:opacity-75"
@@ -124,10 +128,11 @@ function Shorten() {
               >
                 {link.copied ? "Copied!" : "Copy"}
               </button>
-              <p></p>
+              
             </div>
           );
         })}
+         </div>
     </>
   );
 }

@@ -102,7 +102,8 @@ export default function Home() {
         <h2 className="text-white lg:text-4xl mb-8">Boost your links today</h2>
         <Link
           href={"/#Shorten"}
-          className="bg-Cyan rounded-full  p-2 px-7 text-white hover:opacity-75  scroll-smooth" scroll={true}
+          className="bg-Cyan rounded-full  p-2 px-7 text-white hover:opacity-75  scroll-smooth"
+          scroll={true}
         >
           Get Started
         </Link>

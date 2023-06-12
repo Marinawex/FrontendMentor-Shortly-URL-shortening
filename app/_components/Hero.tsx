@@ -23,10 +23,10 @@ function Hero() {
           <br className="invisible lg:visible" />
           insights on how your links are performing.
         </p>
-        <Link href={'/#Shorten'} scroll={true} className="scroll-smooth">
-        <button className="bg-Cyan rounded-full p-2 px-7 text-white hover:opacity-75">
-          Get Started
-        </button>
+        <Link href={"/#Shorten"} scroll={true} className="scroll-smooth">
+          <button className="bg-Cyan rounded-full p-2 px-7 text-white hover:opacity-75">
+            Get Started
+          </button>
         </Link>
       </div>
     </div>
