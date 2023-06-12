@@ -8,22 +8,22 @@ import logoW from "../../public/images/logo-white.svg";
 function Footer() {
   return (
     <>
-    <div id="footer" className="bg-VeryDarkViolet py-10 flex flex-col">
+    <div id="footer" className="bg-VeryDarkViolet py-10 flex flex-col lg:flex-row lg:justify-around lg:items-start lg:text-start  lg:px-52 ">
     <Image
       src={logoW}
       width={100}
       height={100}
       alt="/"
-      className="py-6 self-center"
+      className="py-6 self-center lg:self-start "
     />
 
-    <ul className="text-white py-4">
+    <ul className="text-white py-4 lg:py-0">
       <h4 className="py-4 font-bold">Features</h4>
       <li className="font-[2px] hover:text-Cyan">Link Shortening</li>
       <li className="font-[2px] hover:text-Cyan">Branded Links</li>
       <li className="font-[2px] hover:text-Cyan">Analytics</li>
     </ul>
-    <ul className="text-white py-4">
+    <ul className="text-white py-4 lg:py-0">
       <h4 className="py-4 font-bold">Resources</h4>
       <li className="font-[2px] hover:text-Cyan">Blog</li>
       <li className="font-[2px] hover:text-Cyan">Developers</li>
@@ -37,7 +37,7 @@ function Footer() {
       <li className="font-[2px] hover:text-Cyan"> Contact</li>
     </ul>
 
-    <div id="social" className="flex justify-around  py-10 px-16">
+    <div id="social" className="flex justify-around  py-10 px-16 lg:space-x-6">
       <Image src={facebock} width={25} height={25} alt="/" />{" "}
       <Image src={twitter} width={25} height={25} alt="/" />{" "}
       <Image src={pinterest} width={25} height={25} alt="/" />{" "}

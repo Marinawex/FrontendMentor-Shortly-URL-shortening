@@ -76,14 +76,17 @@ function Shorten() {
 
   return (
     <>
+
+    <div  id="Shorten"className="bg-gray-100  flex flex-col">
       <form onSubmit={handleShortenUrl}>
-        <div id="shorten">
+        <div id="shorten" className="lg:px-52 ">
           {" "}
-          <div className="flex flex-col p-4 gap-3 bg-DarkViolet rounded-md m-4 bg-shorten-pattern lg:flex-row lg:mx-16">
-          
+          <div className="flex flex-col p-4 gap-3 bg-DarkViolet rounded-md m-4 bg-shorten-pattern bg-cover lg:flex-row lg:space-x-5 lg:p-10 lg:bg-shorten-desktop-pattern">
             <input
               placeholder="Shorten a link here..."
-              className={`rounded-md p-2 ${empty ? "border-Red border-2" : ""} lg:grow`}
+              className={`rounded-md p-2 ${
+                empty ? "border-Red border-2" : ""
+              } lg:grow`}
               value={url.long}
               onChange={(e) => handleUrl(e)}
             ></input>
@@ -96,17 +99,20 @@ function Shorten() {
             {empty && <p className="text-Red text-start">Please add a link</p>}
           </div>
         </div>
+        
       </form>
-
+      </div>
       {links &&
         links.map((link, idx) => {
           return (
             <div
               key={idx}
               id="links"
-              className="flex flex-col p-4 gap-3 rounded-md m-4  bg-grey lg:flex-row lg:justify-end "
+              className="flex flex-col p-4 gap-3 rounded-md m-4  bg-grey lg:flex-row lg:justify-end lg:px-52"
             >
-              <p className="text-black text-start p-2 truncate lg:justify-self-start">{link.long}</p>
+              <p className="text-black text-start p-2 truncate lg:justify-self-start">
+                {link.long}
+              </p>
               <hr />
 
               <p className="text-Cyan text-start p-2">{link.short}</p>

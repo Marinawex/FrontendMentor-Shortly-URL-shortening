@@ -7,8 +7,8 @@
     /* @apply bg-Gray; */
     @apply text-center;
     @apply font-medium;
-    
-   
+    @apply leading-loose;
+
     /* @apply tracking-wider; */
   }
 

@@ -22,6 +22,8 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'shorten-pattern': "url('../public/images/bg-shorten-mobile.svg')",
         'boost-pattern': "url('../public/images/bg-boost-mobile.svg')",
+        'shorten-desktop-pattern': "url('../public/images/bg-shorten-desktop.svg')",
+        'boost-desktop-pattern': "url('../public/images/bg-boost-desktop.svg')",
       },
     },
   },

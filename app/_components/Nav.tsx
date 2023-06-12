@@ -11,7 +11,7 @@ function Nav() {
   const handleMenu = () => setShowMenu(!showMenu);
 
   return (
-    <nav className="lg:px-44 lg:pt-8">
+    <nav className="lg:px-52 lg:py-8">
       <div className="flex justify-between m-5 ">
         <div className="lg:flex lg:space-x-6 lg:items-center ">
           <Image src={logo} width={121} height={33} alt="/" />
