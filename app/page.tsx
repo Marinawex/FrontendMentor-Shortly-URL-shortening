@@ -10,22 +10,23 @@ import {
   useQuery,
 } from "@tanstack/react-query";
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 
 export default function Home() {
   return (
     <>
+    <div className="lg:flex lg:flex-col lg:justify-between lg:px-44">
       <Hero />
-    
-    <Shorten/>
-     
-      
-      <div id="statistics" className="bg-gray-100 py-8 pt-16">
+
+      <Shorten />
+
+      <div id="statistics" className="bg-gray-100 py-8 pt-16 ">
         <h2>Advanced Statistics</h2>{" "}
         <p className="pb-16">
           Track how your links are performing across the web with our advanced
           statistics dashboard.
         </p>
+        <div className="lg:flex">
         <div id="Recognition" className="bg-white rounded-sm mx-4  p-6  ">
           {" "}
           <div className="relative p-1 mt-2">
@@ -39,7 +40,7 @@ export default function Home() {
             mean a thing. Branded links help instil confidence in your content.
           </p>{" "}
         </div>
-        <div className="bg-Cyan w-3 h-[6rem] ml-[11rem]"></div>
+        <div className="bg-Cyan w-3 h-[6rem] ml-[11rem] lg:w-[40rem] lg:h-2"></div>
         <div id="Records" className="bg-white rounded-sm mx-4 p-6 ">
           <div className="relative p-1 mt-2">
             <div className="bg-DarkViolet rounded-full w-[5rem] h-[5rem]  flex items-center justify-center absolute  left-[6.5rem] bottom-0">
@@ -68,6 +69,8 @@ export default function Home() {
             customizable links, supercharging audience engagement.
           </p>
         </div>
+      </div>
+      </div>
       </div>
       <div id="boost" className="bg-DarkViolet py-[6rem]  bg-boost-pattern">
         <h2 className="text-white">Boost your links today</h2>

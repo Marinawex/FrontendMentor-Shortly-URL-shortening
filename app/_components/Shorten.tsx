@@ -79,10 +79,11 @@ function Shorten() {
       <form onSubmit={handleShortenUrl}>
         <div id="shorten">
           {" "}
-          <div className="flex flex-col p-4 gap-3 bg-DarkViolet rounded-md m-4 bg-shorten-pattern">
+          <div className="flex flex-col p-4 gap-3 bg-DarkViolet rounded-md m-4 bg-shorten-pattern lg:flex-row lg:mx-16">
+          
             <input
               placeholder="Shorten a link here..."
-              className={`rounded-md p-2 ${empty ? "border-Red border-2" : ""}`}
+              className={`rounded-md p-2 ${empty ? "border-Red border-2" : ""} lg:grow`}
               value={url.long}
               onChange={(e) => handleUrl(e)}
             ></input>
@@ -103,14 +104,14 @@ function Shorten() {
             <div
               key={idx}
               id="links"
-              className="flex flex-col p-4 gap-3 rounded-md m-4  bg-grey "
+              className="flex flex-col p-4 gap-3 rounded-md m-4  bg-grey lg:flex-row lg:justify-end "
             >
-              <p className="text-black text-start p-2">{link.long}</p>
+              <p className="text-black text-start p-2 truncate lg:justify-self-start">{link.long}</p>
               <hr />
 
               <p className="text-Cyan text-start p-2">{link.short}</p>
               <button
-                className={`rounded-md p-2 px-7 text-white  ${
+                className={`lg:justify-self-end rounded-md p-2 px-7 text-white  ${
                   link.copied ? "bg-DarkViolet" : "bg-Cyan hover:opacity-75"
                 } `}
                 onClick={() => handleCopy(link.short)}
