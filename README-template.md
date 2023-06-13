@@ -82,7 +82,7 @@ const proudOfThisFunc = () => {
 
 ### Useful resources
 
-- [React query with app router in next js](https://www.example.com](https://tanstack.com/query/latest/docs/react/guides/ssr#using-the-app-directory-in-nextjs-13) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+- [React-query-with-app-router-in-next-js](https://www.example.com](https://tanstack.com/query/latest/docs/react/guides/ssr#using-the-app-directory-in-nextjs-13) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
 
