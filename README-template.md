@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./public/images/Shortly-desktop.png)
-![](./public/images/Shortly-mobile.jpg)
+![](./public/images/Shortly-desktop.png =250x250)
+![](./public/images/Shortly-mobile.jpg =250x250)
 
 
 
