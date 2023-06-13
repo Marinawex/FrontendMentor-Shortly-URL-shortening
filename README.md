@@ -37,23 +37,28 @@ Users should be able to:
 
 #### Desktop Version
 
-My Project:
-
 <p float="left">
-<img src="./public/images/Shortly-desktop.png" alt="Desktop Version of my Project" width="400"/>
-<img src="./public/images/desktop-design.jpg" alt="Desktop Version Design Reference" width="400"/>
+ <figure>
+    <img src="./public/images/Shortly-desktop.png" alt="Desktop Version of my Project" width="400"/>
+   <figcaption>My Project:</figcaption>
+</figure>
+ <figure>
+    <img src="./public/images/desktop-design.jpg" alt="Desktop Version Design Reference" width="400"/>
+<figcaption>Design Reference:</figcaption>
+</figure>
 </p>
-Design Reference:
 
 #### Mobile Version
 
-My Project:                                 Design Reference:
-
+ <figure>
 <p float="left">
-<img src="./public/images/Shortly-mobile.jpg" alt="Mobile Version of my Project" width="200" height="600"/>
-<img src="./public/images/mobile-design.jpg" alt="Mobile Version Design Reference" width="200" height="600"/>
+<img src="./public/images/Shortly-mobile.jpg" alt="Mobile Version of my Project" width="200" height="800"/>
+  <figcaption>My Project:</figcaption>
+  </figure>
+  <figure>
+<img src="./public/images/mobile-design.jpg" alt="Mobile Version Design Reference" width="200" height="800"/>
+ </figure>
 </p>
-
 
 ### Links
 
