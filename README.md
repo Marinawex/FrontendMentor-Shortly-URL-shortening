@@ -1,34 +1,111 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend Mentor - Shortly URL shortening API Challenge solution
 
-## Getting Started
+This is a solution to the [Shortly URL shortening API Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G).
 
-First, run the development server:
+This solution involves building an intuitive and responsive web application that allows users to generate shortened versions of their URLs, store them persistently, and copy them conveniently, providing an enhanced user experience across various devices.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## Table of contents
+
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+
+**Note: Delete this note and update the table of contents based on what sections you keep.**
+
+## Overview
+
+### The challenge
+
+The Shortly URL shortening API challenge calls for the creation of a fully-functional, user-friendly web application. This application should be adaptive to various screen sizes, ensuring an optimal layout for any device. Users must be able to input a valid URL and receive a shortened version of it in return. The primary functionality includes maintaining a persisting list of shortened URLs that the user can conveniently copy to their clipboard with a single click.
+
+Users should be able to:
+
+- View the optimal layout for the site depending on their device's screen size
+- Shorten any valid URL
+- See a list of their shortened links, even after refreshing the browser
+- Copy the shortened link to their clipboard in a single click
+- Receive an error message when the `form` is submitted if:
+  - The `input` field is empty
+
+### Screenshot
+
+<!-- ![<img src="./public/images/Shortly-desktop.png"  width="100" height="100"/>](./public/images/Shortly-desktop.png ) -->
+
+<!-- ![<img src="./public/images/Shortly-mobile.jpg"  width="100" height="100"/>](./public/images/Shortly-mobile.jpg ) -->
+
+### Screenshots
+
+#### Desktop Version
+
+My Project:
+<img src="./public/images/Shortly-desktop.png" alt="Desktop Version of my Project" width="400"/>
+
+Design Reference:
+<img src="./public/images/Shortly-desktop-design-reference.jpg" alt="Desktop Version Design Reference" width="400"/>
+
+#### Mobile Version
+
+My Project:
+<img src="./public/images/Shortly-mobile.png" alt="Mobile Version of my Project" width="200"/>
+
+Design Reference:
+<img src="./public/images/Shortly-mobile-design-reference.jpg" alt="Mobile Version Design Reference" width="200"/>
+
+
+### Links
+
+- Live Site URL: [Add live site URL here](https://frontend-mentor-shortly-url-shortening.vercel.app)
+
+## My process
+
+### Built with
+
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
+- [Next.js](https://nextjs.org/) - React framework
+- [Tailwindcss](https://tailwindcss.com//) - For styles
+- [React query](https://tanstack.com/query/v4/docs/react/overview) - For the API
+
+For this project, React was chosen for its ease in creating interactive UIs, facilitating efficient component-based development for each part of the web app - from the input field to the list of shortened URLs. Next.js, with its automatic server-side rendering, was utilized to ensure a smooth user experience, maintaining a fast and responsive interface even when handling numerous URL shortening requests. TailwindCSS was selected for its utility-first approach, enabling the precise implementation of the design in a quick, mobile-first workflow. This combination of tools, chosen specifically for this project, aids in efficiently developing a performant and user-friendly web application.
+
+### What I learned
+
+This project was an excellent opportunity to integrate several technologies into a single solution. I got a chance to deepen my understanding of React and Next.js while applying a mobile-first development approach. TailwindCSS proved to be a powerful tool for creating responsive designs, and React Query simplified state management and async operations with the API.
+
+
+
+To see how you can add code snippets, see below:
+
+```html
+<h1>Some HTML code I'm proud of</h1>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```css
+.proud-of-this-css {
+  color: papayawhip;
+}
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```js
+const proudOfThisFunc = () => {
+  console.log("🎉");
+};
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Continued development
 
-## Learn More
+In the future, I plan to refine this project further. I'll focus on perfecting the UI to match the original design as closely as possible ('pixel perfect'). I'm also considering expanding the functionality, perhaps by adding user accounts and the ability to save shortened URLs permanently.
 
-To learn more about Next.js, take a look at the following resources:
+Additionally, I'm looking to implement the URL shortening feature using my own algorithm instead of relying on an external service. One approach could be to use a base64 encoding scheme to create unique identifiers for each URL. These identifiers would then be stored in a key-value database, like Redis or Google's Firebase, alongside their corresponding URLs. This not only would give me greater control over the shortened URLs, but it would also be an excellent opportunity to gain experience with key-value databases and further explore backend development.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Useful resources
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [React-query-with-app-router-in-next-js](https://www.example.com](https://tanstack.com/query/latest/docs/react/guides/ssr#using-the-app-directory-in-nextjs-13) - This resource provided a deep dive into integrating React Query with Next.js. It was particularly useful for handling server-side rendering, a feature built into Next.js.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
