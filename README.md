@@ -46,14 +46,14 @@ Design Reference:
 #### Mobile Version
 
 My Project:
-<img src="./public/images/Shortly-mobile.jpg" alt="Mobile Version of my Project" width="200"/>
+<img src="./public/images/Shortly-mobile.jpg" alt="Mobile Version of my Project" width="200" height="200"/>
 
 Design Reference:
-<img src="./public/images/mobile-design.jpg" alt="Mobile Version Design Reference" width="200"/>
+<img src="./public/images/mobile-design.jpg" alt="Mobile Version Design Reference" width="200" height="200"/>
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://frontend-mentor-shortly-url-shortening.vercel.app)
+- Live Site URL: [](https://frontend-mentor-shortly-url-shortening.vercel.app)
 
 ## My process
 
@@ -72,19 +72,6 @@ For this project, React was chosen for its ease in creating interactive UIs, fac
 This project was an excellent opportunity to integrate several technologies into a single solution. I got a chance to deepen my understanding of React and Next.js while applying a mobile-first development approach. TailwindCSS proved to be a powerful tool for creating responsive designs, and React Query simplified state management and async operations with the API.
 
 Here are a few code snippets from the project:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
- <div className="desktop-menu-btns lg:space-x-8 hidden lg:flex">
-    <button className="text-GrayishViolet hover:text-black">Login</button>
-    <button className="bg-Cyan rounded-full p-2 px-7 text-white hover:opacity-75">
-        Sign Up
-    </button>
-</div>
-```
 
 ```js
 const handleCopy = (linkToCopy: string) => {
