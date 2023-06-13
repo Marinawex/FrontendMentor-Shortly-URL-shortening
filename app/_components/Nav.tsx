@@ -7,7 +7,6 @@ import { useState } from "react";
 
 function Nav() {
   const [showMenu, setShowMenu] = useState(false);
-
   const handleMenu = () => setShowMenu(!showMenu);
 
   return (

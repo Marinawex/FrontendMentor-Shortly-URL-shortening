@@ -33,12 +33,6 @@ Users should be able to:
 - Receive an error message when the `form` is submitted if:
   - The `input` field is empty
 
-### Screenshot
-
-<!-- ![<img src="./public/images/Shortly-desktop.png"  width="100" height="100"/>](./public/images/Shortly-desktop.png ) -->
-
-<!-- ![<img src="./public/images/Shortly-mobile.jpg"  width="100" height="100"/>](./public/images/Shortly-mobile.jpg ) -->
-
 ### Screenshots
 
 #### Desktop Version
@@ -47,16 +41,15 @@ My Project:
 <img src="./public/images/Shortly-desktop.png" alt="Desktop Version of my Project" width="400"/>
 
 Design Reference:
-<img src="./public/images/Shortly-desktop-design-reference.jpg" alt="Desktop Version Design Reference" width="400"/>
+<img src="./public/images/desktop-design.jpg" alt="Desktop Version Design Reference" width="400"/>
 
 #### Mobile Version
 
 My Project:
-<img src="./public/images/Shortly-mobile.png" alt="Mobile Version of my Project" width="200"/>
+<img src="./public/images/Shortly-mobile.jpg" alt="Mobile Version of my Project" width="200"/>
 
 Design Reference:
-<img src="./public/images/Shortly-mobile-design-reference.jpg" alt="Mobile Version Design Reference" width="200"/>
-
+<img src="./public/images/mobile-design.jpg" alt="Mobile Version Design Reference" width="200"/>
 
 ### Links
 
@@ -78,24 +71,30 @@ For this project, React was chosen for its ease in creating interactive UIs, fac
 
 This project was an excellent opportunity to integrate several technologies into a single solution. I got a chance to deepen my understanding of React and Next.js while applying a mobile-first development approach. TailwindCSS proved to be a powerful tool for creating responsive designs, and React Query simplified state management and async operations with the API.
 
-
-
-To see how you can add code snippets, see below:
+Here are a few code snippets from the project:
 
 ```html
 <h1>Some HTML code I'm proud of</h1>
 ```
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
-}
+ <div className="desktop-menu-btns lg:space-x-8 hidden lg:flex">
+    <button className="text-GrayishViolet hover:text-black">Login</button>
+    <button className="bg-Cyan rounded-full p-2 px-7 text-white hover:opacity-75">
+        Sign Up
+    </button>
+</div>
 ```
 
 ```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
+const handleCopy = (linkToCopy: string) => {
+  const modifiedLinks: Url[] = links.map((link) => 
+    link.short === linkToCopy ? { ...link, copied: true } : link
+  );
+  setLinks(modifiedLinks);
+  navigator.clipboard.writeText(linkToCopy);
 };
+
 ```
 
 ### Continued development
@@ -106,6 +105,4 @@ Additionally, I'm looking to implement the URL shortening feature using my own a
 
 ### Useful resources
 
-- [React-query-with-app-router-in-next-js](https://www.example.com](https://tanstack.com/query/latest/docs/react/guides/ssr#using-the-app-directory-in-nextjs-13) - This resource provided a deep dive into integrating React Query with Next.js. It was particularly useful for handling server-side rendering, a feature built into Next.js.
-
-
+- [React-query-with-app-router-in-next-js](https://tanstack.com/query/latest/docs/react/guides/ssr#using-the-app-directory-in-nextjs-13) - This resource provided a deep dive into integrating React Query with Next.js. It was particularly useful for handling server-side rendering, a feature built into Next.js.

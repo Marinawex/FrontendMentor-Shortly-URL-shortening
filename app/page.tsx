@@ -4,22 +4,13 @@ import records from "../public/images/icon-detailed-records.svg";
 import customizable from "../public/images/icon-fully-customizable.svg";
 import Shorten from "./_components/Shorten";
 import Hero from "./_components/Hero";
-import {
-  QueryClient,
-  QueryClientProvider,
-  useQuery,
-} from "@tanstack/react-query";
 import Link from "next/link";
-import { useRouter } from "next/router";
-
-const queryClient = new QueryClient();
 
 export default function Home() {
   return (
     <>
       <div className="lg:flex lg:flex-col lg:justify-between ">
         <Hero />
-
         <Shorten />
         <div className="bg-gray-100">
           <div className="bg-gray-100  py-4 lg:px-52 ">
@@ -31,10 +22,6 @@ export default function Home() {
                 with our advanced statistics dashboard.
               </p>
             </div>
-            <div></div>
-
-            {/* <div className="bg-Cyan lg:w-full lg:h-2 z-0 ">
-            </div> */}
 
             <div className="lg:flex lg:my-18 lg:text-start ">
               <div

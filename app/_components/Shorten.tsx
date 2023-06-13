@@ -7,10 +7,17 @@ interface Url {
   short: string;
   copied: boolean;
 }
-
 const fetchUrl = async (url: string) => {
-  const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${url}`);
-  return res.json();
+  try {
+    const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${url}`);
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+    return res.json();
+  } catch (error) {
+    console.error("An error occurred while fetching the URL:", error);
+    throw error;
+  }
 };
 
 function Shorten() {
@@ -20,25 +27,23 @@ function Shorten() {
 
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: ["urls", url.long],
-    queryFn: async () => {
-      const data = await fetchUrl(url.long);
+    queryFn: () => fetchUrl(url.long),
+    enabled: false,
+    onSuccess: (data) => {
       const newUrl = { ...url, short: data.result.full_short_link };
       setUrl(newUrl);
-      setLinks([newUrl, ...links]);
-      let oldData = sessionStorage.getItem("links") || "";
+      setLinks((prevLinks) => [newUrl, ...prevLinks]);
 
+      const oldData = sessionStorage.getItem("links") || "";
       if (oldData) {
-        let oldUrls = JSON.parse(oldData);
-
+        const oldUrls = JSON.parse(oldData);
         sessionStorage.setItem("links", JSON.stringify([newUrl, ...oldUrls]));
       } else {
         sessionStorage.setItem("links", JSON.stringify([newUrl]));
       }
-      setUrl({ long: "", short: "", copied: false });
 
-      return data;
+      setUrl({ long: "", short: "", copied: false });
     },
-    enabled: false,
   });
 
   useEffect(() => {
@@ -64,12 +69,9 @@ function Shorten() {
   };
 
   const handleCopy = (linkToCopy: string) => {
-    const modifiedLinks: Url[] = links.map((link) => {
-      if (link.short == linkToCopy) {
-        link.copied = true;
-      }
-      return link;
-    });
+    const modifiedLinks: Url[] = links.map((link) =>
+      link.short === linkToCopy ? { ...link, copied: true } : link
+    );
     setLinks(modifiedLinks);
     navigator.clipboard.writeText(linkToCopy);
   };
@@ -81,7 +83,6 @@ function Shorten() {
           <div id="shorten" className="lg:mx-52 ">
             {" "}
             <div className="flex flex-col p-4 gap-3 bg-DarkViolet rounded-md m-4 bg-shorten-pattern bg-cover lg:flex-row lg:space-x-5 lg:p-10 lg:bg-shorten-desktop-pattern">
-               
               <input
                 placeholder="Shorten a link here..."
                 className={`rounded-md p-2 ${
@@ -96,43 +97,38 @@ function Shorten() {
               >
                 Shorten It!
               </button>
-            
-
-
               {empty && (
                 <p className="text-Red text-start ">Please add a link</p>
               )}
             </div>
           </div>
         </form>
-     
-      {links &&
-        links.map((link, idx) => {
-          return (
-            <div
-              key={idx}
-              id="links"
-              className="flex flex-col p-5 bg-white gap-3 rounded-md m-4  lg:flex-row lg:justify-between lg:mx-52 lg:my-2 "
-            >
-              <p className="text-black text-start p-2 truncate lg:justify-self-start">
-                {link.long}
-              </p>
-              <hr className="visible lg:invisible"/>
 
-              <p className="text-Cyan text-start  p-2">{link.short}</p>
-              <button
-                className={`lg:justify-self-end rounded-md p-2 px-7 text-white  ${
-                  link.copied ? "bg-DarkViolet" : "bg-Cyan hover:opacity-75"
-                } `}
-                onClick={() => handleCopy(link.short)}
+        {links &&
+          links.map((link, idx) => {
+            return (
+              <div
+                key={idx}
+                id="links"
+                className="flex flex-col p-5 bg-white gap-3 rounded-md m-4  lg:flex-row lg:justify-between lg:mx-52 lg:my-2 "
               >
-                {link.copied ? "Copied!" : "Copy"}
-              </button>
-              
-            </div>
-          );
-        })}
-         </div>
+                <p className="text-black text-start p-2 truncate lg:justify-self-start">
+                  {link.long}
+                </p>
+                <hr className="visible lg:invisible" />
+                <p className="text-Cyan text-start  p-2">{link.short}</p>
+                <button
+                  className={`lg:justify-self-end rounded-md p-2 px-7 text-white  ${
+                    link.copied ? "bg-DarkViolet" : "bg-Cyan hover:opacity-75"
+                  } `}
+                  onClick={() => handleCopy(link.short)}
+                >
+                  {link.copied ? "Copied!" : "Copy"}
+                </button>
+              </div>
+            );
+          })}
+      </div>
     </>
   );
 }
