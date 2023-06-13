@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./public/images/Shortly-desktop.png)
-![](./public/images/Shortly-mobile.jpg)
+![<img src="./public/images/Shortly-desktop.png"  width="100" height="100"/>](./public/images/Shortly-desktop.png )
+<!-- ![<img src="./public/images/Shortly-mobile.jpg"  width="100" height="100"/>](./public/images/Shortly-mobile.jpg ) -->
 
 ### Links
 
@@ -42,13 +42,11 @@ Users should be able to:
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
-- [tailwindcss](https://tailwindcss.com//) - For styles
+- [Tailwindcss](https://tailwindcss.com//) - For styles
+- [React query](https://tanstack.com/query/v4/docs/react/overview) - For the API
 
 ### What I learned
 
@@ -74,9 +72,10 @@ const proudOfThisFunc = () => {
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+- pixel perfect
+- 
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+- [React-query-with-app-router-in-next-js](https://www.example.com](https://tanstack.com/query/latest/docs/react/guides/ssr#using-the-app-directory-in-nextjs-13) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
