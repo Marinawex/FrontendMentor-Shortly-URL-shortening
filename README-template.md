@@ -33,7 +33,7 @@ Users should be able to:
 ### Screenshot
 
 ![<img src="./public/images/Shortly-desktop.png"  width="100" height="100"/>](./public/images/Shortly-desktop.png )
-![<img src="./public/images/Shortly-mobile.jpg"  width="100" height="100"/>](./public/images/Shortly-mobile.jpg )
+<!-- ![<img src="./public/images/Shortly-mobile.jpg"  width="100" height="100"/>](./public/images/Shortly-mobile.jpg ) -->
 
 
 
