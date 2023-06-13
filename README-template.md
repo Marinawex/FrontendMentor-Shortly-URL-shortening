@@ -33,6 +33,7 @@ Users should be able to:
 ### Screenshot
 
 ![](./public/images/Shortly-desktop.png)
+![](./public/images/Shortly-mobile.png)
 
 
 
