@@ -37,32 +37,31 @@ Users should be able to:
 
 #### Desktop Version
 
+- My Project (displayed on the left)
+- Design Reference (displayed on the right)
+
 <p float="left">
- <figure>
-    <img src="./public/images/Shortly-desktop.png" alt="Desktop Version of my Project" width="400"/>
-   <figcaption>My Project:</figcaption>
-</figure>
- <figure>
-    <img src="./public/images/desktop-design.jpg" alt="Desktop Version Design Reference" width="400"/>
-<figcaption>Design Reference:</figcaption>
-</figure>
+<img src="./public/images/Shortly-desktop.png" alt="Desktop Version of my Project" width="400"/>
+<img src="./public/images/desktop-design.jpg" alt="Desktop Version Design Reference" width="400"/>
 </p>
+
+
 
 #### Mobile Version
 
- <figure>
+- My Project (displayed on the left)
+- Design Reference (displayed on the right)
+
 <p float="left">
-<img src="./public/images/Shortly-mobile.jpg" alt="Mobile Version of my Project" width="200" height="800"/>
-  <figcaption>My Project:</figcaption>
-  </figure>
-  <figure>
-<img src="./public/images/mobile-design.jpg" alt="Mobile Version Design Reference" width="200" height="800"/>
- </figure>
+<img src="./public/images/Shortly-mobile.jpg" alt="Mobile Version of my Project" width="200" height="900"/>
+<img src="./public/images/mobile-design.jpg" alt="Mobile Version Design Reference" width="200" height="900"/>
 </p>
+
+
 
 ### Links
 
-- Live Site URL: [](https://frontend-mentor-shortly-url-shortening.vercel.app)
+- Live Site URL: [Live Demo](https://frontend-mentor-shortly-url-shortening.vercel.app)
 
 ## My process
 
@@ -84,12 +83,13 @@ Here are a few code snippets from the project:
 
 ```js
 const handleCopy = (linkToCopy: string) => {
-  const modifiedLinks: Url[] = links.map((link) =>
+  const modifiedLinks: Url[] = links.map((link) => 
     link.short === linkToCopy ? { ...link, copied: true } : link
   );
   setLinks(modifiedLinks);
   navigator.clipboard.writeText(linkToCopy);
 };
+
 ```
 
 ### Continued development
