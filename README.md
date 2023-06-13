@@ -38,18 +38,22 @@ Users should be able to:
 #### Desktop Version
 
 My Project:
-<img src="./public/images/Shortly-desktop.png" alt="Desktop Version of my Project" width="400"/>
 
-Design Reference:
+<p float="left">
+<img src="./public/images/Shortly-desktop.png" alt="Desktop Version of my Project" width="400"/>
 <img src="./public/images/desktop-design.jpg" alt="Desktop Version Design Reference" width="400"/>
+</p>
+Design Reference:
 
 #### Mobile Version
 
 My Project:
-<img src="./public/images/Shortly-mobile.jpg" alt="Mobile Version of my Project" width="200" height="200"/>
 
+<p float="left">
+<img src="./public/images/Shortly-mobile.jpg" alt="Mobile Version of my Project" width="200" height="400"/>
+<img src="./public/images/mobile-design.jpg" alt="Mobile Version Design Reference" width="200" height="400"/>
+</p>
 Design Reference:
-<img src="./public/images/mobile-design.jpg" alt="Mobile Version Design Reference" width="200" height="200"/>
 
 ### Links
 
@@ -75,13 +79,12 @@ Here are a few code snippets from the project:
 
 ```js
 const handleCopy = (linkToCopy: string) => {
-  const modifiedLinks: Url[] = links.map((link) => 
+  const modifiedLinks: Url[] = links.map((link) =>
     link.short === linkToCopy ? { ...link, copied: true } : link
   );
   setLinks(modifiedLinks);
   navigator.clipboard.writeText(linkToCopy);
 };
-
 ```
 
 ### Continued development
