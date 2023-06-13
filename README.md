@@ -47,13 +47,13 @@ Design Reference:
 
 #### Mobile Version
 
-My Project:
+My Project:                                 Design Reference:
 
 <p float="left">
-<img src="./public/images/Shortly-mobile.jpg" alt="Mobile Version of my Project" width="200" height="400"/>
-<img src="./public/images/mobile-design.jpg" alt="Mobile Version Design Reference" width="200" height="400"/>
+<img src="./public/images/Shortly-mobile.jpg" alt="Mobile Version of my Project" width="200" height="600"/>
+<img src="./public/images/mobile-design.jpg" alt="Mobile Version Design Reference" width="200" height="600"/>
 </p>
-Design Reference:
+
 
 ### Links
 
