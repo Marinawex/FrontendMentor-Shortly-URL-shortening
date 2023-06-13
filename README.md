@@ -53,17 +53,12 @@ Users should be able to:
 - Design Reference (displayed on the right)
 
 <p float="left">
-<img src="./public/images/Shortly-mobile-1.png" alt="Mobile Version of my Project" width="200" />
-<img src="./public/images/mobile-design2.jpeg" alt="Mobile Version Design Reference" width="200" />
-<img src="./public/images/Shortly-mobile-2.png" alt="Mobile Version of my Project" width="200" />
-<img src="./public/images/mobile-design1.jpg" alt="Mobile Version Design Reference" width="200" />
+<img src="./public/images/Shortly-mobile-1.png" alt="Mobile Version of my Project" width="200" height="700"/>
+<img src="./public/images/mobile-design1.jpg" alt="Mobile Version Design Reference" width="200" height="700"/>
+<img src="./public/images/mobile-design2.jpeg" alt="Mobile Version Design Reference" width="200" height="700"/>
+<img src="./public/images/Shortly-mobile-2.png" alt="Mobile Version of my Project" width="200" height="700"/>
 </p>
 
-<!-- </hr>
-
-<p float="left">
-
-</p> -->
 
 
 
